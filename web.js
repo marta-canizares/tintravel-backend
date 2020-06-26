@@ -32,6 +32,7 @@ app.get('/', function (req, res) {
     res.render('index');
 });
 
+const PORT = process.env.PORT_WEB;
 //app.use('/', express.static(process.cwd() + '/Tintravel'))
-app.listen(8081, () => console.log(`Front end app listening on port 80!`))
+app.listen(PORT, () => console.log(`Front end app listening on port ${PORT}!`))
 

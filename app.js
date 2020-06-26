@@ -36,7 +36,7 @@ app.use(manejoError.errorGenerico);
 
 
 const PORT = process.env.PORT;
-app.listen(PORT, () => console.log(`Server API running on port ${PORT}`))
+app.listen(9000, () => console.log(`Server API running on port ${PORT}`))
 
 
 
