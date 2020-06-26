@@ -33,5 +33,5 @@ app.get('/', function (req, res) {
 });
 
 //app.use('/', express.static(process.cwd() + '/Tintravel'))
-app.listen(80, () => console.log(`Front end app listening on port 80!`))
+app.listen(8080, () => console.log(`Front end app listening on port 80!`))
 
