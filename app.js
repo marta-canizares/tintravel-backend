@@ -20,7 +20,7 @@ app.use(express.json())
 
 //app.use(express.static('Tintravel'))
 
-app.use('/', express.static('/Tintravel'))
+app.use('/', express.static(process.cwd() + '/Tintravel'))
 app.listen(80, () => console.log(`Front end app listening on port 80!`))
 
 
