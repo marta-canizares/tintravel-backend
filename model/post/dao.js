@@ -15,6 +15,9 @@ class postDao {
                     if (err)
                         throw err;
                     console.log(rows);
+
+                    connection.end();
+
                     resolve(rows);
                 });
         });
@@ -31,6 +34,10 @@ class postDao {
                     if (err)
                         throw err;
                     console.log(err);
+
+
+                    connection.end();
+
                     resolve(result.insertId);
 
                 });
@@ -48,6 +55,9 @@ class postDao {
                     if (err)
                         throw err;
                     console.log(err);
+
+
+                    connection.end();
 
                     resolve(1);
 
@@ -83,6 +93,9 @@ class postDao {
                     console.log(err);
 
                     console.log(rows);
+
+                    connection.end();
+
                     resolve(rows);
                 });
         });
@@ -98,6 +111,9 @@ class postDao {
                     console.log(err);
 
                     console.log(rows);
+
+                    connection.end();
+
                     resolve(rows);
                 });
         });
@@ -113,6 +129,9 @@ class postDao {
                     if (err)
                         throw err;
                     console.log(err);
+
+
+                    connection.end();
 
                     resolve(result.affectedRows);
 

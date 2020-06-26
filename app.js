@@ -35,7 +35,7 @@ app.use(manejoError.errorCliente);
 app.use(manejoError.errorGenerico);
 
 
-const PORT = process.env.PORT;
+const PORT = process.env.PORT || 9000;
 app.listen(PORT, () => console.log(`Server API running on port ${PORT}`))
 
 

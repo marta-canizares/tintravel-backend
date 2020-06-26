@@ -15,8 +15,12 @@ class UsuarioDAO {
                     if (err)
                         throw err;
                     console.log(err);
+
+                    connection.end();
+
                     resolve(result.insertId);
                 });
+
         });
     }
 
@@ -28,11 +32,15 @@ class UsuarioDAO {
                 function (err, rows, fields) {
                     if (err)
                         throw err;
+
                     console.log(err);
+
+                    connection.end();
 
                     console.log(rows);
                     resolve(rows);
                 });
+
         });
     }
 
@@ -46,6 +54,8 @@ class UsuarioDAO {
                     if (err)
                         throw err;
                     console.log(err);
+
+                    connection.end();
 
                     resolve(1);
 
@@ -65,6 +75,9 @@ class UsuarioDAO {
                     console.log(err);
 
                     console.log(rows);
+
+                    connection.end();
+
                     resolve(rows);
                 });
         });
@@ -81,6 +94,8 @@ class UsuarioDAO {
                     console.log(err);
 
                     console.log(rows);
+
+                    connection.end();
                     resolve(rows);
                 });
         });
