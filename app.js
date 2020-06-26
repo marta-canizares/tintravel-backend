@@ -28,7 +28,7 @@ app.get('*', function (request, response) {
 });
 
 //app.use('/', express.static(process.cwd() + '/Tintravel'))
-app.listen(80, () => console.log(`Front end app listening on port 80!`))
+app.listen(process.env.PORT, () => console.log(`Front end app listening on port 80!`))
 
 
 app.use('/user', userRouter);
