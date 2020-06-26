@@ -20,23 +20,18 @@ const app = express();
 app.use(cors())
 app.use(express.json())
 
-app.use('/user', userRouter);
-app.use('/perfil', perfilRouter)
-app.use('/posts', postsRouter)
-app.use('/comentarios', comentarioRouter)
-app.use('/contacto', contactoRouter)
-app.use('/uploads', express.static(process.cwd() + '/uploads'))
-app.use('*', errorRouter);
+//app.use(express.static('Tintravel'))
 
+app.use(express.static(path.join(__dirname, 'Tintravel')));
+/*
+app.get('/', function (request, response) {
+    response.sendFile(path.resolve(__dirname, 'Tintravel', 'index.html'));
+});
+*/
+app.get('/', function (req, res) {
+    res.render('index');
+});
 
-
-app.use(manejoError.logError);
-app.use(manejoError.errorCliente);
-app.use(manejoError.errorGenerico);
-
-
-const PORT = process.env.PORT;
-app.listen(PORT, () => console.log(`Server API running on port ${PORT}`))
-
-
+//app.use('/', express.static(process.cwd() + '/Tintravel'))
+app.listen(80, () => console.log(`Front end app listening on port 80!`))
 
