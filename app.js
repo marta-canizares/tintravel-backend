@@ -18,7 +18,10 @@ const app = express();
 app.use(cors())
 app.use(express.json())
 
-app.use(express.static('Tintravel'))
+//app.use(express.static('Tintravel'))
+
+app.use('/', express.static('/Tintravel'))
+app.listen(80, () => console.log(`Front end app listening on port 80!`))
 
 
 app.use('/user', userRouter);
@@ -37,4 +40,4 @@ app.use(manejoError.errorGenerico);
 
 
 const PORT = process.env.PORT;
-app.listen(PORT, () => console.log(`Server running on port ${PORT}`))
+app.listen(PORT, () => console.log(`Server API running on port ${PORT}`))
