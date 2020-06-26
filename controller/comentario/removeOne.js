@@ -1,6 +1,6 @@
 import comentarioDAO from '../../model/comentario/dao.js';
 
-const removeOne = async (req, res) => {
+const removeOne = async (req, res, next) => {
 
     try {
 

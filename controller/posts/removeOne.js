@@ -1,6 +1,6 @@
 import postDao from '../../model/post/dao.js';
 
-const removeOne = async (req, res) => {
+const removeOne = async (req, res, next) => {
 
     try {
 

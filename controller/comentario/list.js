@@ -1,6 +1,6 @@
 import comentarioDAO from '../../model/comentario/dao.js';
 
-const list = async (req, res) => {
+const list = async (req, res, next) => {
 
     try {
         //  console.log(req.params.postid)

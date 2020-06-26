@@ -1,4 +1,4 @@
-import connection from '../../db.js'
+import connect from '../../db.js'
 
 class contactoDAO {
     constructor() {
@@ -6,7 +6,8 @@ class contactoDAO {
     }
 
     create(contacto) {
-        return new Promise((resolve, reject) => {
+        return new Promise(async (resolve, reject) => {
+            let connection = await connect();
             connection.query('INSERT INTO contacto (name, surname, email, mensaje) VALUES(?,?,?,?)', [contacto.name, contacto.surname, contacto.email, contacto.mensaje],
                 function (err, result) {
 

@@ -1,6 +1,6 @@
 import postDao from '../../model/post/dao.js';
 
-const list = async (req, res) => {
+const list = async (req, res, next) => {
 
     try {
         // Hace la llamada al módulo que se conecta a la bbdd

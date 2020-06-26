@@ -1,6 +1,6 @@
 import postDao from '../../model/post/dao.js';
 
-const updateOne = async (req, res) => {
+const updateOne = async (req, res, next) => {
 
     try {
 

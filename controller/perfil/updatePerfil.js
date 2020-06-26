@@ -1,6 +1,6 @@
 import perfilDAO from '../../model/perfil/dao.js';
 
-const updatePerfil = async (req, res) => {
+const updatePerfil = async (req, res, next) => {
 
     try {
 

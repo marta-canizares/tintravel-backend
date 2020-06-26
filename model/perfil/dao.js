@@ -1,4 +1,4 @@
-import connection from '../../db.js'
+import connect from '../../db.js'
 import bcrypt from 'bcrypt';
 
 
@@ -9,6 +9,7 @@ class perfilDAO {
 
     updatePerfil(id, perfil) {
         return new Promise(async (resolve, reject) => {
+            let connection = await connect();
 
             const updatePassword = (perfil.password ? `, password =?` : '');
             let values = [perfil.name, perfil.surname, perfil.username, perfil.email, perfil.paises_visitados, perfil.proximos_viajes, perfil.idiomas,

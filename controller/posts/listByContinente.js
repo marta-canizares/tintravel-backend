@@ -1,6 +1,6 @@
 import postDao from '../../model/post/dao.js';
 
-const listByContinente = async (req, res) => {
+const listByContinente = async (req, res, next) => {
 
     try {
         console.log(req.params.continente)

@@ -1,6 +1,6 @@
 import usuarioDAO from '../../model/user/dao.js';
 
-const removeOne = async (req, res) => {
+const removeOne = async (req, res, next) => {
 
     try {
 

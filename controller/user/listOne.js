@@ -1,6 +1,6 @@
 import usuarioDAO from '../../model/user/dao.js';
 
-const listOne = async (req, res) => {
+const listOne = async (req, res, next) => {
     try {
         if (!req.params.id) {
             res.sendStatus(400);

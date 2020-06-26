@@ -1,6 +1,6 @@
 import postDao from '../../model/post/dao.js';
 
-const create = async (req, res) => {
+const create = async (req, res, next) => {
 
     try {
 
