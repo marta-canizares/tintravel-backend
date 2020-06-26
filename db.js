@@ -5,7 +5,7 @@ dotenv.config();
 
 
 // Configurar conexión MySQL
-let connection = mysql.createConnection({
+let pool = mysql.createPool({
     host: 'eu-cdbr-west-03.cleardb.net', //'localhost'
     user: 'be4451287cf8c6', //'root',
     password: '1ce15682', // process.env.MYSQLPASS,
@@ -14,6 +14,15 @@ let connection = mysql.createConnection({
 );
 
 // Ejecutar conexión
-connection.connect();
+// connection.connect();
 
-export default connection;
+let connect = () => {
+    return new Promise((resolve, reject) => {
+        pool.getConnection((err, connection) => {
+            !err ? resolve(connection) : reject(err)
+        });
+    })
+}
+
+
+export default connect;

@@ -1,4 +1,4 @@
-import connection from '../../db.js'
+import connect from '../../db.js'
 
 
 class UsuarioDAO {
@@ -8,8 +8,8 @@ class UsuarioDAO {
     }
 
     register(usuario) {
-        return new Promise((resolve, reject) => {
-
+        return new Promise(async (resolve, reject) => {
+            let connection = await connect();
             connection.query('INSERT INTO usuario (username,password,name,surname,email) VALUES (?,?,?,?,?)', [usuario.username, usuario.password, usuario.name, usuario.surname, usuario.email],
                 function (err, result) {
                     if (err)
@@ -22,8 +22,8 @@ class UsuarioDAO {
 
 
     listOne(id) {
-
-        return new Promise((resolve, reject) => {
+        return new Promise(async (resolve, reject) => {
+            let connection = await connect();
             connection.query('SELECT * FROM usuario WHERE id = ?', id,
                 function (err, rows, fields) {
                     if (err)
@@ -38,7 +38,8 @@ class UsuarioDAO {
 
 
     removeOne(id) {
-        return new Promise((resolve, reject) => {
+        return new Promise(async (resolve, reject) => {
+            let connection = await connect();
             connection.query('DELETE FROM usuario WHERE id = ?', id,
                 function (err, result) {
 
@@ -55,7 +56,8 @@ class UsuarioDAO {
 
 
     listOneByName(username) {
-        return new Promise((resolve, reject) => {
+        return new Promise(async (resolve, reject) => {
+            let connection = await connect();
             connection.query('SELECT * FROM usuario WHERE username =?', username,
                 function (err, rows, fields) {
                     if (err)
@@ -70,7 +72,8 @@ class UsuarioDAO {
 
     updateImg(userid, img) {
         console.log(userid, img)
-        return new Promise((resolve, reject) => {
+        return new Promise(async (resolve, reject) => {
+            let connection = await connect();
             connection.query('UPDATE usuario SET foto_perfil=? WHERE id=?', [img, userid],
                 function (err, rows) {
                     if (err)
